@@ -3,16 +3,16 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../db/index');
 
 const products = sequelize.define('products', {
-  id: {
+  ProductId: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true,
   },
-  prodcode: DataTypes.TEXT,
-  code: DataTypes.TEXT,
-  prodid: DataTypes.TEXT,
-  description: DataTypes.TEXT,
-}, {
+  ProductName: DataTypes.TEXT,
+  ProductCode: DataTypes.TEXT,
+  description: DataTypes.TEXT
+}, 
+{
   tableName: 'products',
   timestamps: false,
 });
