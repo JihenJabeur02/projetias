@@ -2,7 +2,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../db/index');
 
-const Industies = sequelize.define('Industies', {
+const industies = sequelize.define('industies', {
   IndustryId: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -14,8 +14,8 @@ const Industies = sequelize.define('Industies', {
   Password: DataTypes.TEXT,
   IndustryLocation: DataTypes.TEXT,
 }, {
-  tableName: 'Industies',
+  tableName: 'industies',
   timestamps: false,
 });
 
-module.exports = Industies;
+module.exports = industies;

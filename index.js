@@ -1,22 +1,31 @@
-const express=require('express')
-const app=express()
-const db =require('./db/index')
-const f=require('./models/industry')
-const industryRouter = require('./routes/industries')
-const cors=require('cors')
-const g=require('./models/product')
-const productsRouter = require('./routes/products')
-const h=require('./models/Cart')
-const CartRouter = require('./routes/Cart')
-const y=require('./models/Request')
-const RequestRouter = require('./routes/Request')
-app.use(cors())
-app.use(express.json())
+const express = require('express');
+const app = express();
+const cors = require('cors');
 
-app.use('/industries',industryRouter)
-app.use('/products',productsRouter)
-app.use('/Cart',CartRouter)
-app.use('/Request',RequestRouter)
-app.listen(5000,()=>{
-    console.log('listening on port 5000')
-})
+// Database and models
+const db = require('./db/index');
+const f = require('./models/industries');
+const g = require('./models/product');
+const h = require('./models/Cart');
+const y = require('./models/Request');
+
+// Route imports
+const industryRouter = require('./routes/industries');
+const productsRouter = require('./routes/products');
+const CartRouter = require('./routes/Cart');
+const RequestRouter = require('./routes/Request');
+
+// Middleware setup
+app.use(cors());
+app.use(express.json());
+
+// Route setup
+app.use('/industries', industryRouter);
+app.use('/products', productsRouter);
+app.use('/Cart', CartRouter);
+app.use('/Request', RequestRouter);
+
+// Server start
+app.listen(5000, () => {
+    console.log('listening on port 5000');
+});

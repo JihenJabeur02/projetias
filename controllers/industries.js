@@ -1,9 +1,9 @@
-const Industies = require("../models/industry")
+const industies = require("../models/industries")
 
 module.exports={
     addIndustry:async(req,res)=>{
         try {
-            const data=await Industies.create(req.body)
+            const data=await industies.create(req.body)
             if (data) return res.status(200).json('created')
             return res.status(400).json('something went wrong')
             
@@ -13,7 +13,7 @@ module.exports={
     },
     getIndustry:async(req,res)=>{
         try {
-            const data=await Industies.findAll()
+            const data=await industies.findAll()
             if (data) return res.status(200).json(data)
             return res.status(400).json('something went wrong')
             
@@ -24,7 +24,7 @@ module.exports={
     getOneIndustry:async(req,res)=>{
         try {
 
-            const data=await Industies.findOne({where:{id:req.params.id}})
+            const data=await industies.findOne({where:{id:req.params.id}})
             if (data) return res.status(200).json(data)
             else{
         return res.status(400).json('something went wrong')
@@ -37,7 +37,7 @@ module.exports={
     updateOneIndustry:async(req,res)=>{
         try {
 
-            const data=await Industies.update(req.body,{where:{id:req.params.id}})
+            const data=await industies.update(req.body,{where:{id:req.params.id}})
             if (data) return res.status(200).json(data)
             else{
         return res.status(400).json('something went wrong')
@@ -50,7 +50,7 @@ module.exports={
     deleteOneIndustry:async(req,res)=>{
         try {
 
-            const data=await Industies.destroy({where:{id:req.params.id}})
+            const data=await industies.destroy({where:{id:req.params.id}})
             if (data) return res.status(200).json(data)
             else{
         return res.status(400).json('something went wrong')

@@ -8,4 +8,4 @@ CartRouter.put('/updateOne/:id',CartController.updateOneCart)
 CartRouter.delete('/deleteOne/:id',CartController.deleteOneCart)
 
 
-module.exports=CartRouter
+module.exports=CartRouter;

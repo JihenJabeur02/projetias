@@ -8,4 +8,4 @@ productsRouter.put('/updateOne/:id',productController.updateOneproduct)
 productsRouter.delete('/deleteOne/:id',productController.deleteOneproduct)
 
 
-module.exports=productsRouter
+module.exports=productsRouter;
