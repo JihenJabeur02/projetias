@@ -3,20 +3,18 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../db/index');
 
 const request = sequelize.define('request', {
-  OrderId: {
+  Id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true,
   },
-  IndustryCode_Requester: DataTypes.TEXT,
-  IndustryId_Requester: DataTypes.TEXT,
-  IndustryId_FullFiller: DataTypes.TEXT,
-  Productid: DataTypes.TEXT,
-  QuantityRequested: DataTypes.TEXT,
-  Date_of_the_command: DataTypes.TEXT,
-  TotalPrice: DataTypes.TEXT,
-  PaymentType: DataTypes.TEXT,
   
+  Date: DataTypes.TEXT,
+  Price: DataTypes.TEXT,
+  PaymentType: DataTypes.TEXT, 
+  Status: DataTypes.TEXT,
+  Requester: DataTypes.TEXT,
+  Fulfiller: DataTypes.TEXT
 }, 
 {
   tableName: 'request',

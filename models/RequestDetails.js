@@ -2,19 +2,20 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../db/index');
 
-const products = sequelize.define('products', {
+const requestDetails = sequelize.define('requestDetails', {
   Id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true,
   },
-  ProductName: DataTypes.TEXT,
-  ProductCode: DataTypes.TEXT,
-  description: DataTypes.TEXT
+  
+  productid: DataTypes.TEXT,
+  quantityrequested: DataTypes.TEXT, 
+  requestid: DataTypes.TEXT
 }, 
 {
-  tableName: 'products',
+  tableName: 'requestDetails',
   timestamps: false,
 });
 
-module.exports = products;
+module.exports = requestDetails;

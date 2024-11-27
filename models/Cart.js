@@ -3,7 +3,7 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../db/index');
 
 const Cart = sequelize.define('Cart', {
-    CartId: {
+    Id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true,

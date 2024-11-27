@@ -1,9 +1,9 @@
-const industies = require("../models/industries")
+const requestDetails = require("../models/RequestDetails")
 
 module.exports={
-    addIndustry:async(req,res)=>{
+    addrequestDetails:async(req,res)=>{
         try {
-            const data=await industies.create(req.body)
+            const data=await requestDetails.create(req.body)
             if (data) return res.status(200).json('created')
             return res.status(400).json('something went wrong')
             
@@ -11,21 +11,9 @@ module.exports={
             res.status(500).json('internal server error')
         }
     },
-    login:async(req,res)=>{
+    getrequestDetails:async(req,res)=>{
         try {
-            const data=await industies.findOne({code:req.body.code})
-            if (data.password===req.body.password){
-                return res.status(200).json('ok')
-            }
-            return res.status(400).json('something went wrong')
-            
-        } catch (e) {
-            res.status(500).json('internal server error')
-        }
-    },
-    getIndustry:async(req,res)=>{
-        try {
-            const data=await industies.findAll()
+            const data=await requestDetails.findAll()
             if (data) return res.status(200).json(data)
             return res.status(400).json('something went wrong')
             
@@ -33,10 +21,10 @@ module.exports={
             res.status(500).json('internal server error')
         }
     },
-    getOneIndustry:async(req,res)=>{
+    getOnerequestDetails:async(req,res)=>{
         try {
 
-            const data=await industies.findOne({where:{id:req.params.id}})
+            const data=await requestDetails.findOne({where:{id:req.params.id}})
             if (data) return res.status(200).json(data)
             else{
         return res.status(400).json('something went wrong')
@@ -46,10 +34,10 @@ module.exports={
             res.status(500).json('internal server error')
         }
     },
-    updateOneIndustry:async(req,res)=>{
+    updateOnerequestDetails:async(req,res)=>{
         try {
 
-            const data=await industies.update(req.body,{where:{id:req.params.id}})
+            const data=await requestDetails.update(req.body,{where:{id:req.params.id}})
             if (data) return res.status(200).json(data)
             else{
         return res.status(400).json('something went wrong')
@@ -59,10 +47,10 @@ module.exports={
             res.status(500).json('internal server error')
         }
     },
-    deleteOneIndustry:async(req,res)=>{
+    deleteOnerequestDetails:async(req,res)=>{
         try {
 
-            const data=await industies.destroy({where:{id:req.params.id}})
+            const data=await requestDetails.destroy({where:{id:req.params.id}})
             if (data) return res.status(200).json(data)
             else{
         return res.status(400).json('something went wrong')

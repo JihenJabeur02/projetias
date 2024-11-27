@@ -3,7 +3,7 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../db/index');
 
 const Industry = sequelize.define('Industry', {
-  IndustryId: {
+  Id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true,
